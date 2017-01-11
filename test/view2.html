@@ -1,0 +1,12 @@
+<div ng-controller="MyController">
+    <h2>View 2</h2>
+    Name: 
+    <br/>
+    <input type="text" ng-model="city" />
+    <br/>
+    <ul>
+        <li ng-repeat="cust in customers | filter:city">{{ cust.name }}  - {{ cust.city }}</li>
+    </ul>
+    <br/>
+    <a href="#!/view1">View 1</a>
+</div>
