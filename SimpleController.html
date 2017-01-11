@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <title>SimpleController</title>
+</head>
+<body>
+    <div ng-controller="SimpleController">
+        Name:
+        <br/>
+        <input type="text" ng-model="nameText" />
+        <br/>
+        <ul>
+            <li ng-repeat="cust in customers | filter:nameText" >
+                {{ cust.name}} - {{ cust.city }}
+            </li>   
+        </ul>
+    </div>
+
+    <script src="angular.min.js"></script>
+
+     <script>
+        function SimpleController($scope) {
+            $scope.nameText = 'TEST';
+            $scope.customers = [
+                { name: 'Dav1', city: 'TH'},
+                { name: 'Bac1', city: 'EN'}
+            ];
+        }
+
+        var module = angular.module('App', []);
+
+        module.controller('SimpleController', SimpleController);
+    </script>
+</body>
+</html>

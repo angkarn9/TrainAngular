@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html data-ng-app>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        Name: <input type="text" data-ng-model="name" /> {{ name }}
+    </div>
+    <br>
+    Iterating
+    <div class="container" data-ng-init="personNames=['Person1','Person2','Person3','Person4']">
+        <h3>Looping</h3>
+        <ul>
+            <li data-ng-repeat="personName in personNames">{{ personName }}</li>
+        </ul>
+    </div>
+    <div class="container" data-ng-init="books=['book1','book2','book3','book4']">
+        <h3>Looping2</h3>
+        <ul>
+            <li data-ng-repeat="book in books">{{ book }}</li>
+        </ul>
+    </div>
+
+    <div data-ng-init="customers=[{name:'john',city:'France'}, {name:'robot', city:'Thailand'}]">
+        <br>
+        Filter
+        <input type="text" data-ng-model="nameText" />
+        <ul>
+            <li data-ng-repeat="cust in customers | filter:nameText | orderBy:'name'">
+                <!-- แบบที่ 1 -->
+                <!-- {{ cust.name | uppercase }} - {{ cust.city }} -->
+                <!-- แบบที่ 2 -->
+                {{ (cust.name | uppercase) +' - '+ (cust.city | lowercase) }}
+            </li>
+        </ul>
+    </div>
+    <script src="angular.min.js"></script>
+</body>
+</html>
