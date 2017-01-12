@@ -3,7 +3,7 @@ function MyController($scope, MyFactory) {
         { name: 'Dav1', city: 'TH'},
         { name: 'Bac1', city: 'EN'},
         { name: 'Bac2', city: 'EN'}
-    ];*/
+    ];*/ 
 
     $scope.customers = MyFactory.getCustomers();
 
